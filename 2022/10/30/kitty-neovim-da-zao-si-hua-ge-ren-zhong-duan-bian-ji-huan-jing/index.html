@@ -407,7 +407,7 @@ Terminal终端我选择了kitty，kitty是一个基于GPU的功能强大的轻�
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alias ssh=&quot;kitty +kitten ssh&quot;</span><br></pre></td></tr></table></figure>
 
 <p>kitty支持非常灵活的窗口布局，同时内部集成了对多个控制台的终端复用功能，省去了使用tmux的操作。</p>
-<p><img src="/universe.lepton.github.io/kitty+neovim%20%E2%80%94%20%E6%89%93%E9%80%A0%E4%B8%9D%E6%BB%91%E4%B8%AA%E4%BA%BA%E7%BB%88%E7%AB%AF%E7%BC%96%E8%BE%91%E7%8E%AF%E5%A2%83%20f2aacf41ad6a4101a2ae3048b64e5cc3/kitty.gif" alt="**多窗口和zoom pannel的示例**"></p>
+<p><img src="/universe.lepton.github.io/images/kitty.gif" alt="多窗口和zoom pannel的示例"></p>
 <p><strong>多窗口和zoom pannel的示例</strong></p>
 <p>要支持zoom panel的话需要自己实现一个函数，创建<code>~/.config/kitty/zoom_toggle.py:</code></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">args</span>):</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> kittens.tui.handler <span class="keyword">import</span> result_handler</span><br><span class="line"><span class="meta">@result_handler(<span class="params">no_ui=<span class="literal">True</span></span>)</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">handle_result</span>(<span class="params">args, answer, target_window_id, boss</span>):</span><br><span class="line">    tab = boss.active_tab</span><br><span class="line">    <span class="keyword">if</span> tab <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        <span class="keyword">if</span> tab.current_layout.name == <span class="string">&#x27;stack&#x27;</span>:</span><br><span class="line">            tab.last_used_layout()</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            tab.goto_layout(<span class="string">&#x27;stack&#x27;</span>)</span><br></pre></td></tr></table></figure>
@@ -418,14 +418,10 @@ Terminal终端我选择了kitty，kitty是一个基于GPU的功能强大的轻�
 <p>这样就可以使用cmd+z进行窗口缩放啦</p>
 <p>kitty还有很多强大的功能比如通过session file来控制startup session时的窗口布局，工作目录或者运行指定程序等等，详细可以查看官网： <a target="_blank" rel="noopener" href="https://sw.kovidgoyal.net/kitty/overview/">https://sw.kovidgoyal.net/kitty/overview/</a> ，总之就是一切皆命令，可以省去大量的手工操作。</p>
 <h2 id="neovim-coc-nvim"><a href="#neovim-coc-nvim" class="headerlink" title="neovim+coc.nvim"></a>neovim+coc.nvim</h2><p>这两个玩意儿可以直接把你的代码开发环境变得比IDE更加如丝般顺滑，函数定义跳转，引用查找，错误提示，自动代码补全等等完全不在话下。毕竟neovim的设计理念相对vim8要超前很多，同时开发者数量也要多很多。关于neovim及其相关插件的安装方法 Martins3在他的这篇博客里（<a target="_blank" rel="noopener" href="https://martins3.github.io/My-Linux-Config/docs/nvim.html">https://martins3.github.io/My-Linux-Config/docs/nvim.html</a>）已经讲的很清楚了，按照里面的步骤一步一步操作下来就可以。当然我配置这个过程还是挺崎岖的 😂，主要是有挺多依赖组件的版本问题。直接上图展示最终的整体效果吧，看完之后你可能就会心动了。</p>
-<p><img src="/universe.lepton.github.io/kitty+neovim%20%E2%80%94%20%E6%89%93%E9%80%A0%E4%B8%9D%E6%BB%91%E4%B8%AA%E4%BA%BA%E7%BB%88%E7%AB%AF%E7%BC%96%E8%BE%91%E7%8E%AF%E5%A2%83%20f2aacf41ad6a4101a2ae3048b64e5cc3/nvim_codecompletion.gif" alt="**自动代码补全**"></p>
-<p><strong>自动代码补全</strong></p>
-<p><a target="_blank" rel="noopener" href="https://www.notion.so/">https://www.notion.so</a></p>
-<p>查找符号</p>
-<p><a target="_blank" rel="noopener" href="https://www.notion.so/">https://www.notion.so</a></p>
-<p>打开文件树</p>
-<p><a target="_blank" rel="noopener" href="https://www.notion.so/">https://www.notion.so</a></p>
-<p>直接查看代码的git commit记录</p>
+<p><img src="/universe.lepton.github.io/images/nvim_codecompletion.gif" alt="自动代码补全"></p>
+<p><img src="/universe.lepton.github.io/images/nvim_findsymbol.gif" alt="查找符号"></p>
+<p><img src="/universe.lepton.github.io/images/nvim_openfiletree.gif" alt="打开文件树"></p>
+<p><img src="/universe.lepton.github.io/images/nvim_git.gif" alt="查看相关代码git commit"></p>
 
                 
             </div>
@@ -799,15 +795,6 @@ Terminal终端我选择了kitty，kitty是一个基于GPU的功能强大的轻�
     }
 
     
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
 </style>
 <div class="">
     
@@ -815,9 +802,9 @@ Terminal终端我选择了kitty，kitty是一个基于GPU的功能强大的轻�
         <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
                    server="netease"
                    type="playlist"
-                   id="503838841"
+                   id="6896947444"
                    fixed='true'
-                   autoplay='false'
+                   autoplay='true'
                    theme='#42b983'
                    loop='all'
                    order='random'
