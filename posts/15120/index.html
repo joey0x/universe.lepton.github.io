@@ -476,7 +476,7 @@ Terminal终端我选择了kitty，kitty是一个基于GPU的功能强大的轻�
 <pre class="line-numbers language-none"><code class="language-none">alias ssh&#x3D;&quot;kitty +kitten ssh&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>kitty支持非常灵活的窗口布局，同时内部集成了对多个控制台的终端复用功能，省去了使用tmux的操作。</p>
-<p><img src="/universe.lepton.github.io/images/kitty.gif" alt="多窗口和zoom pannel的示例"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/joey0x/cdn-for-githubio/images/kitty.gif" alt="多窗口和zoom pannel的示例"></p>
 <p><strong>多窗口和zoom pannel的示例</strong></p>
 <p>要支持zoom panel的话需要自己实现一个函数，创建<code>~/.config/kitty/zoom_toggle.py:</code></p>
 <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span>args<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -498,10 +498,10 @@ Terminal终端我选择了kitty，kitty是一个基于GPU的功能强大的轻�
 <p>这样就可以使用cmd+z进行窗口缩放啦</p>
 <p>kitty还有很多强大的功能比如通过session file来控制startup session时的窗口布局，工作目录或者运行指定程序等等，详细可以查看官网： <a target="_blank" rel="noopener" href="https://sw.kovidgoyal.net/kitty/overview/">https://sw.kovidgoyal.net/kitty/overview/</a> ，总之就是一切皆命令，可以省去大量的手工操作。</p>
 <h2 id="neovim-coc-nvim"><a href="#neovim-coc-nvim" class="headerlink" title="neovim+coc.nvim"></a>neovim+coc.nvim</h2><p>这两个玩意儿可以直接把你的代码开发环境变得比IDE更加如丝般顺滑，函数定义跳转，引用查找，错误提示，自动代码补全等等完全不在话下。毕竟neovim的设计理念相对vim8要超前很多，同时开发者数量也要多很多。关于neovim及其相关插件的安装方法 Martins3在他的这篇博客里（<a target="_blank" rel="noopener" href="https://martins3.github.io/My-Linux-Config/docs/nvim.html">https://martins3.github.io/My-Linux-Config/docs/nvim.html</a>）已经讲的很清楚了，按照里面的步骤一步一步操作下来就可以。当然我配置这个过程还是挺崎岖的 😂，主要是有挺多依赖组件的版本问题。直接上图展示最终的整体效果吧，看完之后你可能就会心动了。</p>
-<p><img src="/universe.lepton.github.io/images/nvim_codecompletion.gif" alt="自动代码补全"></p>
-<p><img src="/universe.lepton.github.io/images/nvim_findsymbol.gif" alt="查找符号"></p>
-<p><img src="/universe.lepton.github.io/images/nvim_openfiletree.gif" alt="打开文件树"></p>
-<p><img src="/universe.lepton.github.io/images/nvim_git.gif" alt="查看相关代码git commit"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/joey0x/cdn-for-githubio/images/nvim_codecompletion.gif" alt="自动代码补全"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/joey0x/cdn-for-githubio/images/nvim_findsymbol.gif" alt="查找符号"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/joey0x/cdn-for-githubio/images/nvim_openfiletree.gif" alt="打开文件树"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/joey0x/cdn-for-githubio/images//nvim_git.gif" alt="查看相关代码git commit"></p>
 
                 
             </div>
